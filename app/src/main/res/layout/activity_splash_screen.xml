@@ -17,7 +17,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Hamro Bazar"/>
+        android:gravity="bottom"
+        android:layout_gravity="bottom"
+        android:hint="By using Hamrobazar.com App/Service implies that you have read  accepted our Terms Of User, Safety Tips  Ad Posting Rules." />
 
 
 </LinearLayout>
