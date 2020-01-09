@@ -8,13 +8,14 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
+
 <ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/at"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/etemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Email Address" />
@@ -26,13 +27,13 @@
         android:src="@drawable/at" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Password" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#2DACCF"
@@ -47,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password"
-        android:id="@+id/forgot"
+        android:id="@+id/btnforgot"
         android:background="#C9371B"
         android:layout_gravity="right"
         android:textColor="#FFFFFF"
@@ -62,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Now"
+        android:id="@+id/btnregister"
         android:background="#FFFFFF"
         android:textColor="#2DACCF"/>
 </LinearLayout>
