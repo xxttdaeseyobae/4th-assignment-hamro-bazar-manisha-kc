@@ -75,6 +75,7 @@
         android:background="#2bacce"
         android:textColor="#fff"
         android:textAllCaps="false"
+        android:id="@+id/btnread"
         android:text="I have read &amp; agree to above terms"/>
 
 </LinearLayout>
