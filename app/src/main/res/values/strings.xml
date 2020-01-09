@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">hamrobaraz</string>
+    <string name="app_name">hamrobazar</string>
+    <string name="register" >
+
+        <br>
+            don't have account?\n
+        </br>
+        <br> create one for FREE</br>
+    </string>
 </resources>
