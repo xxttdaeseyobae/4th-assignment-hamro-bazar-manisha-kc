@@ -3,6 +3,13 @@
     package="com.example.hamrobaraz">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+
 
     <application
         android:allowBackup="true"
@@ -12,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".adapters.ProductAdapter"></activity>
-        <activity android:name=".model.Category" />
+        <activity android:name=".module.Category" />
         <activity android:name=".adapters.ImageSliderAdapter" />
         <activity android:name=".adapters.CategoryAdapter" />
         <activity android:name=".DashboardActivity" />
