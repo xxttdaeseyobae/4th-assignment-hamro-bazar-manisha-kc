@@ -53,7 +53,7 @@ Button btnread;
                     startActivity(new Intent(TermsConditionActivity.this, DashboardActivity.class));
                 }
                 else {
-                    Toast.makeText(TermsConditionActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TermsConditionActivity.this,"Check all the boxes",Toast.LENGTH_SHORT).show();
                 }
 
             }
