@@ -21,7 +21,7 @@ public class Terms extends AppCompatActivity {
         wvterms.getSettings().setJavaScriptEnabled(true);
         wvterms.getSettings().setAppCacheEnabled(true);
         wvterms.setWebViewClient(new WebViewClient());
-        wvterms.loadUrl("https://hamrobazaar.com/safetytips.php");
+        wvterms.loadUrl("https://hamrobazaar.com/terms.html");
 
 
 

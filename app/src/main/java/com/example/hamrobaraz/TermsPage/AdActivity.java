@@ -20,7 +20,7 @@ WebView wvad;
         wvad.getSettings().setJavaScriptEnabled(true);
         wvad.getSettings().setAppCacheEnabled(true);
         wvad.setWebViewClient(new WebViewClient());
-        wvad.loadUrl("https://hamrobazaar.com/safetytips.php");
+        wvad.loadUrl("https://hamrobazaar.com/postrules.html");
 
     }
 }
