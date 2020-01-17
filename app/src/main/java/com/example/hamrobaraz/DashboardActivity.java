@@ -31,11 +31,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity {
-
     Toolbar mainToolbar;
 
     ImageView imgLoginIcon;
-
 
     //Category Recycler View
     RecyclerView rvCategory, rvTrendingProducts, rvRecentlyListedAds;
@@ -45,13 +43,10 @@ public class DashboardActivity extends AppCompatActivity {
     LinearLayout sliderDotsPanel;
     private int dotscount;
     private ImageView[] dots;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_dashboard);
 
         imgLoginIcon = findViewById(R.id.imgLoginIcon);
         imgLoginIcon.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +56,11 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
+
 
 
         viewPager = findViewById(R.id.imageSlider);
@@ -73,6 +73,7 @@ public class DashboardActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
 
+
         //Indicator
         dotscount = adapter.getCount();
         dots = new ImageView[dotscount];
@@ -80,7 +81,7 @@ public class DashboardActivity extends AppCompatActivity {
         for (int i = 0; i < dotscount; i++) {
 
             dots[i] = new ImageView(this);
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_indicator));
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_indicator    ));
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
@@ -116,57 +117,35 @@ public class DashboardActivity extends AppCompatActivity {
         //------------Category Recycler View------------//
         rvCategory = findViewById(R.id.rvCategory);
 
-        //Create a list of category
+
         List<Category> categoryList = new ArrayList<>();
 
         categoryList.add(new Category(R.drawable.post_free_ad, "Post FREE Ad"));
-        categoryList.add(new Category(R.drawable.mobile_handset, "Mobile Handset"));
-        categoryList.add(new Category(R.drawable.laptop, "Laptops / Notebooks"));
-        categoryList.add(new Category(R.drawable.houses_for_sale, "Rental Houses"));
-        categoryList.add(new Category(R.drawable.furnitures_for_home, "Furnitures for Home"));
+        categoryList.add(new Category(R.drawable.mobile_handset,"Mobile Handset"));
+        categoryList.add(new Category(R.drawable.laptop,"Laptops / Notebooks"));
+        categoryList.add(new Category(R.drawable.houses_for_sale,"Rental Houses"));
+        categoryList.add(new Category(R.drawable.furnitures_for_home,"Furnitures for Home"));
         categoryList.add(new Category(R.drawable.rental_houses, "Houses for Sale"));
         categoryList.add(new Category(R.drawable.see_more_categories, "See More Categories"));
 
 
-        CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList, this);
+
+        CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList,this);
         rvCategory.setAdapter(categoryAdapter);
         rvCategory.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         //------------Ending Category Recycler View------------//
 
 
+
         //------------Trending Product Recycler View------------//
         rvTrendingProducts = findViewById(R.id.rvTrendingProducts);
 
-        //Create a list of category
         showAllProducts();
-
-        //------------Ending Category Recycler View------------//
-
-
-        //------------Recently Listed Ads Product Recycler View------------//
-        rvRecentlyListedAds = findViewById(R.id.rvRecentlyListedAds);
-
-//        //Create a list of category
-//        List<Products> recentProductsList = new ArrayList<>();
-//
-//        recentProductsList.add(new Products("21 gear black Mountain Bike", R.drawable.mountain_bike, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("Iphone 6s 16gb", R.drawable.iphone, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("21 gear black Mountain Bike", R.drawable.mountain_bike, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("Iphone 6s 16gb", R.drawable.iphone, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("Iphone 6s 16gb", R.drawable.iphone, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("21 gear black Mountain Bike", R.drawable.mountain_bike, "Rs.10,000", "(Used)"));
-//        recentProductsList.add(new Products("Iphone 6s 16gb", R.drawable.iphone, "Rs.10,000", "(Used)"));
-//
-//
-//        ProductAdapter recentProductAdapter = new ProductAdapter(recentProductsList, this);
-//        rvRecentlyListedAds.setAdapter(recentProductAdapter);
-//        rvRecentlyListedAds.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        //------------Ending Category Recycler View------------//
 
 
     }
+
 
     private void showAllProducts() {
 
@@ -206,11 +185,12 @@ public class DashboardActivity extends AppCompatActivity {
         @Override
         public void run() {
 
-            if (!pagerMoved) {
-                if (viewPager.getCurrentItem() == viewPager.getChildCount()) {
-                    viewPager.setCurrentItem(0, true);
-                } else {
-                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+            if (!pagerMoved){
+                if (viewPager.getCurrentItem() == viewPager.getChildCount()){
+                    viewPager.setCurrentItem(0,true);
+                }
+                else {
+                    viewPager.setCurrentItem(viewPager.getCurrentItem()+1, true);
                 }
                 pagerMoved = false;
                 h.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
@@ -222,7 +202,7 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        if (h != null) {
+        if (h != null){
             h.removeCallbacks(animateViewPager);
         }
     }
@@ -231,7 +211,6 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        h.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+        h.postDelayed(animateViewPager,ANIM_VIEWPAGER_DELAY);
     }
-
 }

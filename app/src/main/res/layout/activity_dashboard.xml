@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2D9D9"
     android:orientation="vertical"
     tools:context=".DashboardActivity">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,22 +17,23 @@
         android:paddingRight="10dp"
         android:paddingBottom="5dp">
 
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:src="@drawable/hamro" />
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:src="@drawable/hamro" />
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-    <ImageView
-        android:id="@+id/imgLoginIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:src="@drawable/user_icon" />
+        <ImageView
+            android:id="@+id/imgLoginIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/user_icon" />
+
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -41,8 +41,8 @@
             android:src="@drawable/main_menu" />
 
 
-
     </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -53,14 +53,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/imageSlider"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/sliderDots"
@@ -165,45 +165,10 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="15dp"
-                    android:text="Recently Listed Ads"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:background="#536DFE"
-                    android:text="MORE"
-                    android:textColor="#fff" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvRecentlyListedAds"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp" />
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
 
+</LinearLayout>

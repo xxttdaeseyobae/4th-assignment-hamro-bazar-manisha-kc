@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
 
 
 
@@ -15,6 +17,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,21 +26,27 @@
         <activity android:name=".module.Category" />
         <activity android:name=".adapters.ImageSliderAdapter" />
         <activity android:name=".adapters.CategoryAdapter" />
-        <activity android:name=".DashboardActivity" />
+
         <activity android:name=".TermsPage.AdActivity" />
         <activity android:name=".TermsPage.Safety" />
         <activity android:name=".TermsPage.Terms" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity" >
+
+        </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".TermsConditionActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TermsConditionActivity"></activity>
+        <activity android:name=".DashboardActivity" >
+
+        </activity>
+
     </application>
 
 </manifest>

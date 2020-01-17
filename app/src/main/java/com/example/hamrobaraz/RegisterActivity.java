@@ -76,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         btnRegisterFinal = findViewById(R.id.btnRegisterFinal);
+
         btnRegisterFinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -210,6 +211,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
+//
     }
 }

@@ -10,55 +10,59 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hamrobaraz.StrictMode.StrictModeClass;
+import com.example.hamrobaraz.bill.LoginBill;
+
 public class LoginActivity extends AppCompatActivity {
-EditText etemail, etpassword;
-Button btnlogin,btnforgot,btnregister;
+    private Button btnLogin,btnRegister;
+
+    private EditText etLoginEmail, etLoginPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        etLoginEmail = findViewById(R.id.etLoginEmail);
+        etLoginPassword = findViewById(R.id.etLoginPassword);
 
-        etemail = findViewById(R.id.etemail);
-        etpassword = findViewById(R.id.etpassword);
-        btnlogin = findViewById(R.id.btnlogin);
-        btnforgot = findViewById(R.id.btnforgot);
-        btnregister = findViewById(R.id.btnregister);
+        btnRegister = findViewById(R.id.btnRegister);
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = etemail.getText().toString(),
-                        password = etpassword.getText().toString();
-                if (validate()) {
-                    if ((etemail.equals("softwarica@gmail.com") && (password.equals("coventry")))) {
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                    }
-                }
+
+        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
             }
         });
     }
+    private void login() {
+        String email = etLoginEmail.getText().toString();
+        String password = etLoginPassword.getText().toString();
 
-        private boolean validate() {
-            if (TextUtils.isEmpty(etemail.getText())) {
-                etemail.setError("Enter Email");
-                etemail.requestFocus();
-                return false;
-            } else if (TextUtils.isEmpty(etpassword.getText())) {
-                etpassword.setError("Enter password");
-                etpassword.requestFocus();
-                return false;
-            }
-            return true;
-        }}
+        LoginBill loginBLL = new LoginBill();
 
+        StrictModeClass.StrictMode();
 
-
-
+        if (loginBLL.checkUser(email, password)) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, "Either email or password is incorrect", Toast.LENGTH_SHORT).show();
+            etLoginEmail.requestFocus();
+        }
+    }
+}
 
 
 
